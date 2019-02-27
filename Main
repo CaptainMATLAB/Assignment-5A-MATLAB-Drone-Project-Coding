@@ -1,3 +1,4 @@
 % Drew Ayers Aislinn Grant Evan Jost Kai Kato Maverick Lin Asheton Vodila 13949 T/Th:9:30A.M. Assignment 5A
 clear;
 clc;
+load('Thrust_Drag_Variables.mat')
