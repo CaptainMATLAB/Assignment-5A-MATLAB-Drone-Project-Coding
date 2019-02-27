@@ -1,0 +1,15 @@
+Wing_Area = 1;
+Wing_Span = 2;
+Wing_Thickness = 3;
+Drone_Wetted_Wing_Area = 4;
+Drone_Wetted_Fuselage_Area = 5;
+Drone_Wetted_Tail_Area = 6;
+Fuse_AVG_Diameter = 7;
+Fuse_Length = 8;
+AVG_Wing_Thickness = 9;
+AVG_Tail_Thickness = 10;
+AVG_Wing_Chord = 11;
+AVG_Tail_Chord = 12;
+Drone_Weight = 13;
+Battery_Mass = 14;
+save('Thrust_Drag_Variables.mat')
