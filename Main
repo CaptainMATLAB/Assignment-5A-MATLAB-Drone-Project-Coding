@@ -2,3 +2,32 @@
 clear;
 clc;
 load('Thrust_Drag_Variables.mat')
+
+%Burn to Fly 
+%Last Revision 2/28/19
+%This is our team program for calculating the thrust force for our prototype
+
+clear,clc;
+Data=('ThrustMeasurements.csv');%Loads our data file for thrust input
+ThrustCalculation=load(Data);
+[ThrustForce]=Thrust(ThrustCalculation);%Creates the Vector Thrust Force from the function Thrust
+
+%The Function is defined below
+function [ThrustForce]=Thrust(Data)
+    Pitch=Data(:,1);
+    Diameter=Data(:,2);
+    RPM=Data(:,3);
+    Interval=Data(:,4);
+    Velocity=[1:Interval:20];%Creates the Velocity vector for the interval 
+for Count=1:Interval:length(Velocity)
+    ThrustForce=1.134*(pi*(Diameter^2)*.25)*((Diameter/(3.29546*Pitch))^1.5)*(((RPM*Pitch/60)^2)-((RPM*Pitch/60))*Velocity);
+end
+plot(Velocity,ThrustForce,'b')
+grid on
+hold on
+title('Velocity (m/s) vs. Thrust (N)')
+xlabel('Velocity (m/s)')
+ylabel('Thrust (N)')
+xlim ([0 25])
+ylim ([0 4])
+end 
